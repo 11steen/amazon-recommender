@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 
-top_5_rated_per_user = pd.read_csv(os.path.join("..", 'user_item_top_5_recommendations_by_ratings.csv'))
+top_5_rated_per_user = pd.read_csv('user_item_top_5_recommendations_by_ratings.csv')
+
 most_popular_items_per_category = pd.read_csv(os.path.join("..", 'most_popular_items_per_category.csv'))
 
 
