@@ -53,7 +53,7 @@ Built using Streamlit, the app allows users to:
 bash
 Copy code
 # Clone the repository
-git clone https://github.com/your-username/amazon-recommendation-engine.git
+git clone https://github.com/11steen/amazon-recommender.git
 cd amazon-recommendation-engine
 
 # Install dependencies
