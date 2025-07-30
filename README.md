@@ -1,69 +1,71 @@
-📦 Amazon Electronics Recommendation Engine
-A machine learning-powered recommendation system built using real-world Amazon Electronics data. It predicts product preferences based on historical user ratings and suggests similar items using collaborative filtering (SVD).
+# Amazon Product Recommendation App
 
-🚀 Features
-📊 Uses collaborative filtering (SVD) for personalized recommendations
+A Streamlit-based web application that recommends the top 5 personalized products to users based on their past rating behavior and similar users’ preferences.
 
-🧠 Predicts user preferences based on past interactions
+This project uses a user-based collaborative filtering approach trained on Amazon product reviews to generate tailored product recommendations.
 
-📈 Scalable for large datasets with sparse matrices
+---
 
-💬 Provides product-based filtering using product names (not raw IDs)
+## Dataset
 
-🖥️ Clean and intuitive Streamlit web interface
+**amazon_reviews.csv** – contains user IDs, product IDs, and ratings.
 
-🌄 Beautiful UI with animated background and card-style recommendations
+- 500K+ product ratings  
+- Used to build user-item interaction matrix  
+- Source: [Kaggle – Amazon Reviews Dataset](#)
 
-📂 Dataset
-Source: Amazon Electronics product reviews
+---
 
-Key Columns:
+## Features
 
-userName: Reviewer name
+- Recommends top 5 products per user based on rating behavior
+- Collaborative filtering using user similarity
+- Streamlit interface with dropdown for user selection
+- Clean layout with real-time product suggestions
 
-item_id: Unique product ID
+---
 
-rating: Rating given by the user
+## Tech Stack
 
-reviewText: Detailed review text
+- **Language**: Python  
+- **Libraries**: Pandas, NumPy, Scikit-learn  
+- **Web App**: Streamlit  
+- **Structure**: Modular Python scripts (`/src`) + Jupyter notebook for training
 
-itemName, brand, category, etc.
+---
 
-Note: Large metadata files are currently replaced with mock product titles to ensure smooth app performance and cleaner display.
+## Project Structure
+📁 src/
+├── amazon_recommendation_app.py # Streamlit app
+├── training.py # Recommendation logic
+├── utils.py # Helper functions
+├── EDA.py # Optional: Exploratory Data Analysis
+📄 Amazon product ratings prediction.ipynb
+📄 amazon_reviews.csv
 
-🧠 Approach
-Data Preprocessing: Cleaned ratings and handled missing values
 
-Matrix Factorization: Applied Truncated SVD to the user-item rating matrix
+---
 
-Top-N Recommendations: Finds top similar products based on learned latent features
+## Installation & Usage
 
-Name Mapping: Replaces technical item IDs with real or mock product names for user-friendly recommendations
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/amazon-recommendation-app.git
+cd amazon-recommendation-app
 
-🖥️ Web App
-Built using Streamlit, the app allows users to:
+# 2. Install dependencies
+pip install streamlit pandas numpy scikit-learn
 
-🔍 Select a product by name from a dropdown
+# 3. Run the app
+streamlit run src/amazon_recommendation_app.py
 
-📃 View top recommended products
+Future Improvements
+Add product metadata (title, images)
 
-🎨 Experience a visually appealing UI with slideshow background and card-styled results
+Enhance recommendation algorithm (e.g., SVD, hybrid methods)
 
-⚙️ How to Run
-bash
-Copy code
-# Clone the repository
-git clone https://github.com/11steen/amazon-recommender.git
-cd amazon-recommendation-engine
+Add login/user session support
 
-# Install dependencies
-pip install -r requirements.txt
 
-# Run the app
-streamlit run app.py
-🛠️ Tech Stack
-Python, Pandas, NumPy
 
-Scikit-learn (Truncated SVD)
 
-Streamlit for interactive UI
